@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Frequency Analysis
+{% endblock %}
+
+{% block main %}
+
+<div class="container justify-content-center">
+
+    <div>
+      <h1 class="text-center fs-1 p-2 px-4 mb-3">
+        Frequency Analysis
+      </h1>
+    </div>
+
+  <form method="POST" action="/FrequencyAnalysis">
+    <div>
+      <div class="row-auto g-3 align-items-center mb-3 text-center">
+        <div class="col-auto mb-3">
+          <label for="ciphertext_FA" class="col-form-label fs-3 fw-bold">Enter the ciphertext to analyze</label>
+        </div>
+        <div class="col-auto mb-3">
+          <input type="text" id="ciphertext_analyze" name="ciphertext_analyze" class="form-control">
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <p class="fw-bold" style="color: white;">Top 5 possible decryptions: </p>
+      <div class="row-auto g-3 align-items-center mb-3 form-control border-success">
+        {%for result in results%}
+          <span class="d-block p-2" style="color: black;">
+            Shift: {{ result[0] }} <br>
+            Decrypted text: {{ result[1] }}
+          </span>
+        {%endfor%}
+        <span class="d-block p-2" style="color: white;"></span>
+      </div>
+    </div>
+  
+    <div class="row-auto g-3 align-items-center mb-3 text-center">
+      <div class="col-auto mb-3">
+        <button type="submit" class="btn btn-primary btn-lg" name="action" value="FA">Analyze</button>
+      </div>
+    </div>
+  </form>
+  
+</div>
+
+{% endblock %}

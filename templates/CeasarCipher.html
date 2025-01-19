@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Ceasar's Cipher
+{% endblock %}
+
+{% block main %}
+
+<div>
+  <div>
+    <h1 class="text-center fs-1 p-2 px-4 mb-3">
+      Ceasar's Cipher
+    </h1>
+  </div>
+  
+  <form method="POST" action="/CeasarCipher">
+    <div class="container justify-content-center">
+
+      <div class="row-auto g-3 align-items-center mb-3 text-center">
+          <div class="col-auto mb-3">
+            <label for="plaintext_ceasar" class="col-form-label fs-3 fw-bold">Enter the Text</label>
+          </div>
+          <div class="col-auto mb-3">
+            <input type="text" id="plaintext_ceasar" name="plaintext_ceasar" class="form-control">
+          </div>
+      </div>
+
+      <div class="row-auto g-3 align-items-center mb-3 text-center">
+          <div class="col-auto mb-3">
+            <label for="Multiplier" class="col-form-label fs-3 fw-bold">Enter the multiplier (a)</label>
+          </div>
+          <div class="col-auto mb-3">
+            <input type="text" id="multiplier" name="multiplier"  class="form-control" >
+          </div>
+      </div>
+
+      <div class="row-auto g-3 align-items-center mb-3 text-center">
+          <div class="col-auto mb-3">
+            <label for="shift" class="col-form-label fs-3 fw-bold">Enter the shift key (b)</label>
+          </div>
+          <div class="col-auto mb-3">
+            <input type="text" id="shift" name="shift" class="form-control" >
+          </div>
+      </div>
+    
+      <div>
+        <p class="fw-bold" style="color: white;">Result: </p>
+        <div class="row-auto g-3 align-items-center mb-3 form-control border-success">
+          <span class="d-block p-2" style="color: black;">
+            Result: <br>
+            {{encrypted_message}} 
+            {{decrypted_message}}
+            <br> <br>
+            Note: The message encrypted previously will be decrypted. No need to enter the text again. <br>
+            Just enter the multiplier and shift key.
+          </span>
+        </div>
+      </div>
+
+      <div class="row-auto g-3 align-items-center mb-3 text-center">
+          <div class="col-auto mb-3">
+              <div class="btn-group-lg" role="group" aria-label="Encryption_Dycryption_Submit">
+                  <button type="submit" class="btn btn-primary" name="action" value="encrypt">Encrypt</button>
+                  <button type="submit" class="btn btn-primary" name="action" value="decrypt">Decrypt</button>
+              </div>
+          </div>
+      </div>
+
+    </div>  
+  </form>
+
+</div>
+
+{% endblock %}

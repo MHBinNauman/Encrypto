@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div class="container justify-content-center" style="color: white;">
+  <h1 class="text-center fs-1 p-2 px-4 mb-3">Welcome to our Cryptographic Toolset</h1>
+    <div class="row-auto g-3 align-items-center mt-4 mb-3 form-control border-success">
+        <span class="d-block p-2" style="color: black;">
+            <p class="text-center fs-5 p-2 mx-8 lh-base">
+                An application designed to simplify the world of encryption and decryption. 
+                Whether you're looking to secure your messages or dive deeper into cryptography, this application offers easy-to-use tools for both learning and practical use.
+            </p>
+            <p class="text-center fs-5 p-2 mx-8 lh-base">
+                Our app features two powerful cryptographic methods: the Generalized Caesar Cipher and RSA Encryption.
+                The Generalized Caesar Cipher allows you to encrypt and decrypt messages by manipulating text with two parameters: Scaling factor and Shifting factor. 
+                For those interested in breaking codes, we even offer frequency analysis, which helps decode messages without needing the original key. 
+                On the other hand, RSA Encryption empowers you to generate public and private key pairs for secure communication, giving you a solid foundation in modern encryption techniques.
+            </p>
+            <p class="text-center fs-5 p-2 mx-8 lh-base">            
+                The application is intuitive and user-friendly. To encrypt a message, simply choose your cipher, enter your text, and let the app handle the rest. Decrypting is just as easy — just input your encrypted message and key parameters. 
+                And if you’re working with RSA, generating keys and using them for encryption or decryption is just a click away.
+                Whether you're new to cryptography or need a tool for secure communication, this application is here to help.
+                Start encrypting today and explore the fascinating world of cryptography!
+            </p>
+        </span>
+    </div>
+</div>
+{% endblock %}
