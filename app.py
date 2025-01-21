@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import Encryption_Decryption_Modules
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 
 @app.route("/")
 def index():
@@ -18,6 +18,7 @@ def RSA():
 
             if not plaintext:  # Check if plaintext is empty or None
                 return render_template("apology.html", error="Please enter text to encrypt.", status_code=400)
+            
             encrypted_message = Encryption_Decryption_Modules.rsa_encrypt(plaintext, public_key)
             Encryption_Decryption_Modules.save_to_file("static\\encrypted_rsa.txt", ','.join(map(str, encrypted_message)))
             encrypted_message = ''.join(chr(num) for num in encrypted_message)
